@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+This example uses the builut-in $location service to get the absolute url of the page.
+For many services, like the $location service, it seems like you could use objects that are already in the DOM, like the window.location object, and you could, but it would have some limitations, at least for your AngularJS application.
+
+AngularJS constantly supervise your application, and for it to handle changes and events properly, AngularJS prefers that you use the $location service instead of the window.location object.
+-->
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<p>The url of theis page is:</p>
+<h3>{{myUrl}}</h3>
+</div>
+
+<p>This example uses the builut-in $location service to get the absolute url of the page.</p>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $location) {
+    $scope.myUrl = $location.absUrl();
+});
+</script>
+
+</body>
+</html>

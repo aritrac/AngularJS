@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+	New directives are created by using the .directive function.
+	To invoke the new directive, make an HTML element with the same tag name as the new directive.
+	When naming a directive, you must use a camel case name, w3TestDirective, but when invoking it, you must use - separated name, w3-test-directive:
+
+ -->
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp">
+
+<!--Invoking directive as a tag-->
+<w3-test-directive></w3-test-directive>
+
+<!-- Invoking directive as an attribute-->
+<div w3-test-directive></div>
+
+<!--Invoking directive as a class-->
+<div class="w3-test-directive"></div>
+
+<!--Invoking directive as a comment-->
+<!-- directive: w3-test-directive -->
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+</body>
+</html>

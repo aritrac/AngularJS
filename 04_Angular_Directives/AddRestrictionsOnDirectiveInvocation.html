@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+	You can restrict your directives to only be invoked by some of the methods.
+	By adding a restrict property with the value "A", the directive can only be invoked by attributes:
+	The legal restrict values are:
+		E for Element name
+		A for Attribute
+		C for Class
+		M for Comment
+	By default the value is EA, meaning that both Element names and attribute names can invoke the directive.
+ -->
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp">
+
+<!--Invoking directive as a tag-->
+<w3-test-directive></w3-test-directive>
+
+<!-- Invoking directive as an attribute-->
+<div w3-test-directive></div>
+
+<!--Invoking directive as a class-->
+<div class="w3-test-directive"></div>
+
+<!--Invoking directive as a comment-->
+<!-- directive: w3-test-directive -->
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+    	restrict : "A",
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+</body>
+</html>

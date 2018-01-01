@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+	An AngularJS module defines an application.
+
+	The module is a container for the different parts of an application.
+
+	The module is a container for the application controllers.
+
+	Controllers always belong to a module.
+
+	A module is created by using the AngularJS function angular.module
+
+	The "myApp" parameter refers to an HTML element in which the application will run.
+
+	Now you can add controllers, directives, filters, and more, to your AngularJS application.
+	
+ -->
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<div ng-app="myApp" ng-init="points=[1,15,19,2,40]">
+
+<p>The third result is {{ points[2] }}</p>
+
+</div>
+
+<script>
+
+var app = angular.module("myApp", []); 
+
+</script>
+</body>
+</html>
